@@ -61,16 +61,38 @@ test('a valid blog can be added and undefined number of likes is set to 0 ', asy
     expect(likes).toContain(
         0
     )
-  })
+})
+
+test('status is 404 for undefined title or url', async () => {
+    const newBlog = {
+        title: 'Shea',
+        author: 'Maaret',
+        likes: 3
+    }
+
+    await api
+      .post('/api/blogs')
+      .send(newBlog)
+      .expect(400)
+
+    const newBlog2 = {
+        author: 'Maaret',
+        url: "/.../",
+        likes: 3
+    }
+
+    await api
+      .post('/api/blogs')
+      .send(newBlog2)
+      .expect(400)
+})
 
 test('a specific blog has field "id"', async () => {
     const response = await api.get('/api/blogs')
   
     const ids = response.body.map(r => r.id)
   
-    expect(ids[0]).toBeDefined()
-
-    
+    expect(ids[0]).toBeDefined()   
 })
 
 
