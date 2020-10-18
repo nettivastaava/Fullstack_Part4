@@ -1,9 +1,10 @@
 POST http://localhost:3001/api/blogs
 Content-Type: application/json
+Authorization: bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6IlJ1bGxhLUJvYiIsImlkIjoiNWY4YjJiOTJjOGExYmExM2NkNDM3ZGYyIiwiaWF0IjoxNjAzMDI4MTA4fQ.olAhRpMZTSTO_o7XZlqBCJtUohLXq77CPF3NOCAln-c
 
 {
-  "title": "Ja taas!",
-  "author": "Kari",
+  "title": "Harjulan taistelu II",
+  "author": "Heimo Huima",
   "url": "/api/blogs",
   "likes": 7,
   "userId": "5f8b2b92c8a1ba13cd437df2"
